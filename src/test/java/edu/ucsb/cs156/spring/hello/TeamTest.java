@@ -1,6 +1,8 @@
 package edu.ucsb.cs156.spring.hello;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,7 +30,9 @@ public class TeamTest {
      public void addMember_adds_members() {
         team.addMember("Lauren");
         team.addMember("Karen");
-        assertEquals(List.of("Lauren", "Karen"), team.getMembers());
+        assertEquals(2, team.getMembers().size());
+        assertEquals("Lauren", team.getMembers().get(0));
+        assertEquals("Karen", team.getMembers().get(1));
      }
 
      // T,T
@@ -132,9 +136,18 @@ public class TeamTest {
         assertFalse(benchmark.equals(tester));
     }
 
+     @Test
+    public void equals_null_and_different_class_false() {
+        assertFalse(team.equals(null));
+        assertFalse(team.equals("not a team"));
+    }
+    
     @Test
     public void hashCodeTester() {
-        // do
+        // instantiate t as a Team object
+        // int result = t.hashCode();
+        // int expectedResult = 0;
+        // assertEquals(expectedResult, result);
     }
 
     // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
