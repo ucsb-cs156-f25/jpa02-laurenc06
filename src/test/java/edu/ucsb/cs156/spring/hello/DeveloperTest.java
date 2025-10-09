@@ -25,15 +25,18 @@ public class DeveloperTest {
         assertEquals("Lauren C.", Developer.getName());
     }
 
+     @Test
     public void getGithubId_returns_correct_githubId() {
         assertEquals("laurenc06", Developer.getGithubId());
     }
 
+     @Test
     public void getTeam_returns_team_with_correct_name() {
         Team t = Developer.getTeam();
         assertEquals("f25-09", t.getName());
     }
 
+     @Test
     public void getTeam_returns_team_with_correct_members() {
         Team  t = Developer.getTeam();
         assertTrue(t.getMembers().contains("LAUREN GRACE"),"Team should contain LAUREN");
