@@ -157,25 +157,10 @@ public class TeamTest {
 
     @Test
     public void hashCodeTester() {
-         Team benchmark = new Team();
-        benchmark.setName("f25-09");
-        benchmark.addMember("LAUREN GRACE");
-        benchmark.addMember("SAMPRITA");
-        benchmark.addMember("DAVID MARIO");
-        benchmark.addMember("DENNIS");
-        benchmark.addMember("VIKTOR STANISLAVOV");
-        benchmark.addMember("ONUR");
-
-        Team tester = new Team();
-        tester.setName("f25-09");
-        tester.addMember("LAUREN GRACE");
-        tester.addMember("SAMPRITA");
-        tester.addMember("DAVID MARIO");
-        tester.addMember("DENNIS");
-        tester.addMember("VIKTOR STANISLAVOV");
-        tester.addMember("ONUR");
-
-        assertEquals(benchmark.hashCode(), tester.hashCode());
+        Team t = new Team();
+       int result = t.hashCode();
+        int expectedResult = 1;
+        assertEquals(expectedResult, result);
     }
 
     // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
