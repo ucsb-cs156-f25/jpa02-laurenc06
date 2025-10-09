@@ -35,6 +35,19 @@ public class TeamTest {
         assertEquals("Karen", team.getMembers().get(1));
      }
 
+     @Test
+    public void equals_same_object_returns_true() {
+        Team t = new Team("f25-09");
+        t.addMember("LAUREN GRACE");
+        assertTrue(t.equals(t));  
+    }
+
+    @Test
+    public void equals_different_type_returns_false() {
+        Team t = new Team("A");
+        assertFalse(t.equals("Not a team")); 
+    }
+
      // T,T
      @Test
     public void equals_same_name_and_members() {
@@ -141,13 +154,28 @@ public class TeamTest {
         assertFalse(team.equals(null));
         assertFalse(team.equals("not a team"));
     }
-    
+
     @Test
     public void hashCodeTester() {
-        // instantiate t as a Team object
-        // int result = t.hashCode();
-        // int expectedResult = 0;
-        // assertEquals(expectedResult, result);
+         Team benchmark = new Team();
+        benchmark.setName("f25-09");
+        benchmark.addMember("LAUREN GRACE");
+        benchmark.addMember("SAMPRITA");
+        benchmark.addMember("DAVID MARIO");
+        benchmark.addMember("DENNIS");
+        benchmark.addMember("VIKTOR STANISLAVOV");
+        benchmark.addMember("ONUR");
+
+        Team tester = new Team();
+        tester.setName("f25-09");
+        tester.addMember("LAUREN GRACE");
+        tester.addMember("SAMPRITA");
+        tester.addMember("DAVID MARIO");
+        tester.addMember("DENNIS");
+        tester.addMember("VIKTOR STANISLAVOV");
+        tester.addMember("ONUR");
+
+        assertEquals(benchmark.hashCode(), tester.hashCode());
     }
 
     // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
